@@ -1,0 +1,91 @@
+{
+  "cv": {
+    "name": "Hamza Ibraheem",
+    "title": "Software Engineer Developer",
+    "contact": {
+      "phone": "+962 799437795",
+      "qr_code": "URL_OF_QR_CODE"  // Adicionar o link da imagem do QR code
+    },
+    "about_me": "Seeking an entry-level position in the field of information technology (IT). My objective is to be a leader and influencer to ensure that the project is fit for purpose and execution is well optimized, cost and time-wise. I also aim to share my experience and knowledge with team members to suggest any ideas contributing to the development of the project or the company’s project management policies.",
+    "education": [
+      {
+        "degree": "Computer Information System",
+        "institution": "KASIT - University of Jordan",
+        "dates": "09/2017 - 05/2020",
+        "gpa": 3.5,
+        "certificates": ["CCNA Course", "AWS Certified Cloud Practitioner", "Python for Everybody Certificate"]
+      },
+      {
+        "degree": "Physics and Mechanical Engineering",
+        "institution": "University of Jordan",
+        "dates": "09/2015 - 05/2017",
+        "gpa": null
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Java and DevOps Intern",
+        "company": "Atypon",
+        "dates": "09/2019 - Present"
+      },
+      {
+        "title": "Call Center Agent",
+        "company": "Jordanian cultures",
+        "dates": "06/2017 - 10/2017"
+      }
+    ],
+    "projects": [
+      {
+        "name": "3D Chess",
+        "technology": "OpenGL"
+      },
+      {
+        "name": "Tic-Tac-Toe Game",
+        "technology": "OpenGL"
+      },
+      {
+        "name": "World Navigator",
+        "type": "Console Game",
+        "language": "Java"
+      },
+      {
+        "name": "CheckTime",
+        "type": "Health Tracker App",
+        "platform": "Android"
+      }
+    ],
+    "competitions": [
+      {"place": "1st", "event": "JU Flash Programming Contest"},
+      {"place": "5th", "event": "JU Programming Contest 2019"},
+      {"place": "10th", "event": "JU Programming Contest 2018"},
+      {"place": "2nd", "event": "OLO Olympiad of Mathematics 2012"},
+      {"event": "IEEEXTREME 2018"},
+      {"event": "JCPC 2017, 2018, 2019"},
+      {"event": "Google Hash Code 2017"},
+      {"event": "Code Chef Programming Contest"},
+      {"event": "AMMANPC 2018"},
+      {"event": "CTF Cyber Talents 2019"},
+      {"place": "4th", "event": "Amman Private Schools Chess Competition 2010"}
+    ],
+    "skills": [
+      "HTML", "CSS", "JavaScript", "SQL", "OpenGL", 
+      "C++", "R", "RStudio", "Packet Tracer", "Microsoft Office", 
+      "Git", "Docker", "Maven", "JSP", "Linux", "Bash", 
+      "Android Studio", "AWS", "English", "Arabic"
+    ],
+    "volunteer_work": [
+      {
+        "role": "Organizer",
+        "event": "\"Spectrum Academic Team\" and \"Smartacademic Team\""
+      },
+      {
+        "role": "Member",
+        "event": "IEEE & IEEE CS in JU 2019"
+      },
+      {
+        "role": "Organizer",
+        "event": "\"Khotwet Kheer JU\" Volunteering Team"
+      }
+    ]
+  }
+}

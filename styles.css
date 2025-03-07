@@ -1,0 +1,196 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #f39c12;
+}
+
+.contact-info {
+    font-size: 14px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.vs-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 100%;
+    background-color: #333;
+    color: #dcdcdc;
+    display: -webkit-inline-box;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.sidebar-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.head_space{
+    margin-top: -20px;
+}
+
+.sidebar-item:hover {
+    background-color: #444;
+}
+
+/* Área principal do editor */
+.main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Guias de arquivos */
+.tabs {
+    display: flex;
+    background-color: #252526;
+    padding: 10px;
+}
+
+.tab {
+    background-color: #333;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.tab:hover {
+    background-color: #444;
+}
+
+/* Editor de código */
+.editor {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    /*padding: 20px;*/
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+}
+
+/* Números de linha */
+.line-numbers {
+    color: #888;
+    font-family: monospace;
+    padding-right: 10px;
+    /*padding-top: 20px;*/
+    text-align: right;
+    margin-right: 10px;
+}
+
+.line-numbers span {
+    display: block;
+    padding: 2px 0;
+}
+
+/* Estilo do código */
+.code {
+    font-family: 'Courier New', Courier, monospace;
+    /*white-space: pre-wrap;*/
+    word-wrap: break-word;
+    width: 100%;
+}
+
+/* Barra de status */
+.status-bar {
+    background-color: #333;
+    color: #dcdcdc;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status {
+    font-size: 12px;
+}
+
+pre {
+    white-space: pre-line !important;
+
+}
+.icons{
+    width: 50px;
+    height: auto;
+}
+.icons_proj{
+    width: 35px;
+    height: auto;}
+.icons_skills{
+    width: 35px;
+    height: auto;
+}
+.icons_head{
+    width: 25px;
+    height: auto;
+}
+.icons_section{
+    width: 35px;
+    height: auto;
+}
+.icons_lang{
+    width: 25px;
+    height: auto;
+}
+ul {
+    display: grid;
+}
+li {
+    list-style: none;
+}
+.format_top{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.icon_space{
+    margin-right: 14px;
+}
+.text_space{
+    margin-left: 14px;
+}
+.experience_text{
+    margin-left: 45px;
+}
+.img_new {
+    margin-left: 30px;
+    margin-top: 6px;
+}
+a {
+    all: unset;
+    cursor: pointer;
+}
+p {
+    display: inline-block;
+}
+.p_g{color: #6A9955;}
+.p_y{color: rgb(255, 196, 0);}
+.p_y_d{color: #DCDCAA;}
+.p_y_g{color: #B5CEA8;}
+.p_o{color: #CE9178;}
+.p_l_b{color: #9CDCFE; padding-left: 30px;}
+.p_b_b{color: #569CD6;}
+.p_b{color: white;}
+.new_page{overflow: hidden;}
