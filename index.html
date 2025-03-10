@@ -309,33 +309,125 @@
     </div>
 </body>
 <script>
-    function ajustarNumeros() {
+    // Função para detectar o sistema operacional
+function detectarSO() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+        return "android";
+    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        return "ios";
+    }
+    return "outros"; // Para outros sistemas
+}
+
+// Função para ajustar números no iOS
+function ajustarNumerosIOS() {
     const container = document.querySelector('.line-numbers');
     if (!container) return;
 
     let numeros = container.querySelectorAll('span');
 
+    // Define os limites específicos para iOS com base na largura da tela
+    let limite;
+
+    if (window.innerWidth <= 376) {
+        limite = 740; // Smartphones Pequenos (ex: iPhone SE)
+    } else if (window.innerWidth <= 415) {
+        limite = 680; // Smartphones Médios (ex: iPhone 8, iPhone 7)
+    } else if (window.innerWidth <= 392) {
+        limite = 720; // Smartphones Grandes (ex: iPhone 11, iPhone XR, Galaxy S21)
+    } else if (window.innerWidth <= 431) {
+        limite = 660; // Phablets & Tablets Pequenos (ex: iPhone Pro Max, iPad Mini)
+    } else if (window.innerWidth <= 821) {
+        limite = 470; // Tablets Médios (ex: iPad Air, iPad Pro 10.5")
+    } else if (window.innerWidth <= 1025) {
+        limite = 445; // Tablets Médios (ex: iPad Air, iPad Pro 10.5")
+    } else {
+        limite = 420; // Telas Grandes (Monitores, laptops Full HD+)
+    }
+
     if (numeros.length === 0) {
-        container.innerHTML = '';
-        const limite = window.innerWidth <= 768 ? 657 : 427;
+        container.innerHTML = ''; // Limpa os números antes de recriar
 
         for (let i = 1; i <= limite; i++) {
-        let span = document.createElement('span');
-        span.textContent = i;
-        span.style.display = 'block'; // Cada número em uma linha
-        span.style.margin = '2px 0'; // Pequeno espaçamento entre linhas
-        container.appendChild(span);
+            let span = document.createElement('span');
+            span.textContent = i;
+            span.style.display = 'block'; // Cada número em uma linha
+            span.style.margin = '2px 0'; // Pequeno espaçamento entre linhas
+            container.appendChild(span);
         }
     } else {
-        const limite = window.innerWidth <= 768 ? 657 : 427;
         numeros.forEach((span, index) => {
-        span.style.display = index < limite ? 'block' : 'none';
+            span.style.display = index < limite ? 'block' : 'none';
         });
     }
+}
+
+// Função para ajustar números no Android
+function ajustarNumerosANDROID() {
+    const container = document.querySelector('.line-numbers');
+    if (!container) return;
+
+    let numeros = container.querySelectorAll('span');
+
+    // Define os limites específicos para Android com base na largura da tela
+    let limite;
+
+    if (window.innerWidth <= 350) {
+        limite = 820; // Smartphones Pequenos (ex: iPhone SE)
+    } else if (window.innerWidth <= 375) {
+        limite = 780; // Smartphones Médios (ex: iPhone 8, iPhone 7)
+    } else if (window.innerWidth <= 430) {
+        limite = 690; // Smartphones Grandes (ex: iPhone 11, iPhone XR, Galaxy S21)
+    } else if (window.innerWidth <= 540) {
+        limite = 720; // Phablets & Tablets Pequenos (ex: iPhone Pro Max, iPad Mini)
+    } else if (window.innerWidth <= 855) {
+        limite = 470; // Tablets Médios (ex: iPad Air, iPad Pro 10.5")
+    } else if (window.innerWidth <= 1280) {
+        limite = 420; // Tablets Grandes / Laptops pequenos (ex: iPad Pro 12.9")
+    } else {
+        limite = 420; // Telas Grandes (Monitores, laptops Full HD+)
     }
 
-    window.addEventListener('DOMContentLoaded', ajustarNumeros);
-    window.addEventListener('resize', ajustarNumeros);
+    if (numeros.length === 0) {
+        container.innerHTML = ''; // Limpa os números antes de recriar
+
+        for (let i = 1; i <= limite; i++) {
+            let span = document.createElement('span');
+            span.textContent = i;
+            span.style.display = 'block'; // Cada número em uma linha
+            span.style.margin = '2px 0'; // Pequeno espaçamento entre linhas
+            container.appendChild(span);
+        }
+    } else {
+        numeros.forEach((span, index) => {
+            span.style.display = index < limite ? 'block' : 'none';
+        });
+    }
+}
+
+// Função principal que aplica os ajustes conforme o SO
+function ajustarComportamentoParaSO() {
+    const sistemaOperacional = "android"//detectarSO();
+    if (sistemaOperacional === "android") {
+        // Ajustes específicos para Android
+        window.addEventListener('DOMContentLoaded', ajustarNumerosANDROID);
+        window.addEventListener('resize', ajustarNumerosANDROID);
+        console.log("Aplicando ajustes para Android");
+    } else if (sistemaOperacional === "ios") {
+        // Ajustes específicos para iOS
+        window.addEventListener('DOMContentLoaded', ajustarNumerosIOS);
+        window.addEventListener('resize', ajustarNumerosIOS);
+        console.log("Aplicando ajustes para iOS");
+    } else {
+        // Ajustes para outros sistemas ou desconhecido
+        console.log("Aplicando ajustes para outros sistemas");
+    }
+}
+
+// Chama a função para ajustar o comportamento de acordo com o SO
+ajustarComportamentoParaSO();
 
 </script>
 </html>
