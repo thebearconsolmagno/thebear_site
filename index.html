@@ -375,19 +375,19 @@ function ajustarNumerosANDROID() {
     let limite;
 
     if (window.innerWidth <= 350) {
-        limite = 820; // Smartphones Pequenos (ex: iPhone SE)
+        limite = 820;
     } else if (window.innerWidth <= 375) {
-        limite = 780; // Smartphones Médios (ex: iPhone 8, iPhone 7)
+        limite = 750;
     } else if (window.innerWidth <= 430) {
-        limite = 690; // Smartphones Grandes (ex: iPhone 11, iPhone XR, Galaxy S21)
+        limite = 690;
     } else if (window.innerWidth <= 540) {
-        limite = 720; // Phablets & Tablets Pequenos (ex: iPhone Pro Max, iPad Mini)
+        limite = 720;
     } else if (window.innerWidth <= 855) {
-        limite = 470; // Tablets Médios (ex: iPad Air, iPad Pro 10.5")
+        limite = 470;
     } else if (window.innerWidth <= 1280) {
-        limite = 420; // Tablets Grandes / Laptops pequenos (ex: iPad Pro 12.9")
+        limite = 420;
     } else {
-        limite = 420; // Telas Grandes (Monitores, laptops Full HD+)
+        limite = 420;
     }
 
     if (numeros.length === 0) {
