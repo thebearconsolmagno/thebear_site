@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">R2-D2 inspired astromech icon</title><desc id="desc">A blue, white and orange technical astromech droid icon.</desc>
+  <path fill="#dfe8e9" d="M23 61h82v49c0 7-6 12-13 12H36c-7 0-13-5-13-12V61Z"/><path fill="#ff862e" d="M25 78h78v13H25z"/><path fill="#315d7d" d="M28 65h72v12H28zm9 31h18v20H37zm36 0h18v20H73z"/>
+  <path fill="#1b252a" d="M12 83h15v34H12c-4 0-7-3-7-7V90c0-4 3-7 7-7Zm89 0h15c4 0 7 3 7 7v20c0 4-3 7-7 7h-15V83Z"/><path fill="#c7d9dc" d="M25 58c0-22 17-40 39-40s39 18 39 40H25Z"/><path fill="#315d7d" d="M31 56c1-17 15-31 33-31s32 14 33 31H31Z"/>
+  <circle cx="64" cy="43" r="11" fill="#162126"/><circle cx="64" cy="43" r="5" fill="#ff862e"/><circle cx="46" cy="51" r="4" fill="#dfe8e9"/><circle cx="82" cy="51" r="4" fill="#dfe8e9"/><path fill="#1b252a" d="M52 83h24v8H52z"/><circle cx="64" cy="99" r="6" fill="#315d7d"/>
+</svg>

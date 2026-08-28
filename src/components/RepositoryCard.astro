@@ -1,0 +1,29 @@
+---
+interface Props {
+  index: string;
+  title: string;
+  category: string;
+  description: string;
+  href: string;
+  technologies: string;
+  fork?: boolean;
+}
+const { index, title, category, description, href, technologies, fork = false } = Astro.props;
+---
+<article class="repository-card">
+  <div class="repository-top"><span>{index}</span><span class:list={[{ fork }, 'repository-kind']}>{fork ? 'Open-source fork' : 'Public repository'}</span></div>
+  <p class="repository-category">{category}</p>
+  <h3>{title}</h3>
+  <p class="repository-description">{description}</p>
+  <div class="repository-bottom"><span>{technologies}</span><a href={href} target="_blank" rel="noopener noreferrer">Open repository ↗</a></div>
+</article>
+
+<style>
+  .repository-card{min-height:218px;display:flex;flex-direction:column;padding:22px;border:1px solid var(--line);background:var(--panel);transition:border-color .2s,transform .2s}
+  .repository-card:hover{border-color:var(--acid);transform:translateY(-3px)}
+  .repository-top,.repository-bottom{display:flex;justify-content:space-between;gap:14px;font:500 10px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+  .repository-kind.fork{color:#d6c781}.repository-category{margin:24px 0 8px;font:500 10px var(--mono);letter-spacing:.08em;color:var(--acid);text-transform:uppercase}
+  h3{margin:0;font-size:21px;letter-spacing:-.04em}.repository-description{margin:10px 0 20px;color:var(--muted);font-size:13px;line-height:1.65}
+  .repository-bottom{margin-top:auto;align-items:end}.repository-bottom span{max-width:52%;line-height:1.5}.repository-bottom a{color:var(--text);white-space:nowrap}.repository-bottom a:hover{color:var(--acid)}
+  @media(max-width:600px){.repository-card{min-height:200px}.repository-bottom{align-items:start;flex-direction:column;gap:11px}.repository-bottom span{max-width:none}}
+</style>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { domains } from '../../data/domains';
+
+export function getStaticPaths() {
+  return domains.map((domain) => ({ params: { slug: domain.slug }, props: { domain } }));
+}
+const { domain } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+---
+<BaseLayout title={domain.title} description={domain.summary}>
+  <Header />
+  <main>
+    <section class="domain-hero section-shell"><a href={`${baseUrl}#domains`} class="back-link">← All engineering domains</a><p class="eyebrow">Domain / {domain.number}</p><h1>{domain.title}</h1><p>{domain.introduction}</p></section>
+    <section class="domain-detail section-shell"><div><p class="eyebrow">What I build</p><ul>{domain.builds.map((item) => <li>{item}</li>)}</ul></div><div><p class="eyebrow">Engineering practice</p><ul>{domain.practices.map((item) => <li>{item}</li>)}</ul></div></section>
+    <section class="domain-experience section-shell"><p class="eyebrow">Relevant experience / {domain.experience.length} engagements</p><h2>Where this work has been applied.</h2><p class="experience-intro">Selected roles and initiatives that demonstrate this domain in practice, from implementation through operations.</p><div>{domain.experience.map((item) => <article><time>{item.period}</time><div><h3>{item.organisation}</h3><h2>{item.role}</h2><p>{item.detail}</p></div></article>)}</div></section>
+    <section class="domain-cta section-shell"><p class="eyebrow">Continue the conversation</p><h2>Looking for this kind of engineering work?</h2><a class="button primary" href="mailto:consolmagno.luiz@gmail.com">Get in touch ↗</a></section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+
+# Legacy static website (kept locally only)
+base-page.html
+base_code.txt.txt
+index.html
+new.html
+styles.css
+styles.html
+src/icons/
