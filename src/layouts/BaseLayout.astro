@@ -3,7 +3,43 @@ import '../styles/global.css';
 
 interface Props { title: string; description?: string; }
 
-const { title, description = 'Professional portfolio of Luiz H. Consolmagno, Senior Software Engineer and Technical Architect.' } = Astro.props;
+const siteDescription = 'Engineering portfolio of Luiz Consolmagno, Senior Software Engineer and Technical Architect specializing in Software Engineering, DevOps, DevSecOps, Cybersecurity, Industrial IoT and AI Engineering.';
+const { title, description = siteDescription } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
+const siteUrl = Astro.site ?? new URL('https://thebearconsolmagno.github.io');
+const pageUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const socialImageUrl = new URL(`${baseUrl}banner_for_site.png`, siteUrl).toString();
+const socialTitle = 'Luiz Consolmagno | Senior Software Engineer & Technical Architect';
+const pageTitle = `${title} | The Bear`;
 ---
-<!doctype html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content={description} /><meta name="theme-color" content="#0b0d0e" /><link rel="icon" href={`${baseUrl}favicon.svg`} type="image/svg+xml" /><title>{title} | The Bear</title><style is:global>:root{--acid:#ff862e}</style></head><body><slot /></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0d0e" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="icon" href={`${baseUrl}favicon.svg`} type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Bear Engineering Workspace" />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1734" />
+    <meta property="og:image:height" content="907" />
+    <meta property="og:image:alt" content="Luiz Consolmagno — Senior Software Engineer and Technical Architect" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Luiz Consolmagno — Senior Software Engineer and Technical Architect" />
+
+    <title>{pageTitle}</title>
+    <style is:global>:root{--acid:#ff862e}</style>
+  </head>
+  <body><slot /></body>
+</html>
