@@ -20,7 +20,7 @@ export const domains: Domain[] = [
       { period: '2024', role: 'Senior Software Engineer / DevOps', organisation: 'SIRMEC', detail: 'Developed tools, automated workflows and analytical reporting for sales, packaging production and transportation operations.' },
       { period: '2023', role: 'DevOps Engineer / Senior Software Engineer', organisation: 'Vemar', detail: 'Built automation logic and interfaces across Python, Ruby and PHP services for connected residential and industrial environments.' },
       { period: '2004—2019', role: 'Senior Software & Game Developer / Full-Stack Engineer', organisation: 'NewLand Games', detail: 'Delivered multi-platform web, mobile, desktop and distributed software; built Python, Java and data-intensive systems alongside high-performance interactive products.' },
-      { period: '2004—2019', role: 'Co-founder / Digital Transformation Initiative', organisation: 'Avanti il SUD', detail: 'Helped small businesses adopt e-commerce, workflow automation and digital operating models during a period of major disruption.' },
+      { period: '2020—2022', role: 'Co-founder / Digital Transformation Initiative', organisation: 'Avanti il SUD', detail: 'Helped small businesses adopt e-commerce, workflow automation and digital operating models during a period of major disruption.' },
     ],
   },
   {
@@ -82,8 +82,8 @@ export const domains: Domain[] = [
     experience: [
       { period: '2024', role: 'Senior Software Engineer / DevOps', organisation: 'SIRMEC', detail: 'Built analytical reports and dashboards that helped teams identify operational bottlenecks and performance opportunities.' },
       { period: '2023', role: 'DevOps Engineer / Senior Software Engineer', organisation: 'Vemar', detail: 'Implemented predictive-maintenance logic and real-time IoT data handling across a multi-device automation environment.' },
-      { period: '2004—2019', role: 'Co-founder / Digital Transformation Initiative', organisation: 'Avanti il SUD', detail: 'Applied practical automation and digital operating models to help local businesses make better decisions and sustain operations.' },
-      { period: 'Current focus', role: 'Technical Architecture', organisation: 'The Bear Engineering Workspace', detail: 'Exploring AI-assisted development and automation patterns that retain engineering judgement and operational accountability.' },
+      { period: '2020—2022', role: 'Co-founder / Digital Transformation Initiative', organisation: 'Avanti il SUD', detail: 'Applied practical automation and digital operating models to help local businesses make better decisions and sustain operations.' },
+      { period: '2025—Present', role: 'Senior Software Developer / AI Engineering & Software Architecture', organisation: 'Independent Software Engineering & AI Projects', detail: 'Designing AI-assisted development and automation patterns that retain engineering judgement and operational accountability.' },
     ],
   },
   {
@@ -93,7 +93,7 @@ export const domains: Domain[] = [
     builds: ['AI-assisted development and engineering workflows', 'Retrieval and knowledge-support systems', 'Intelligent automation for repetitive technical work', 'Human-in-the-loop decision-support interfaces', 'Evaluation, observability and guardrails for AI-enabled features'],
     practices: ['Start with a measurable operational problem', 'Keep humans accountable for consequential decisions', 'Evaluate quality, reliability and failure modes', 'Protect sensitive data and control access to context', 'Make AI outputs traceable, reviewable and easy to override'],
     experience: [
-      { period: 'Current focus', role: 'AI Engineer / Technical Architect', organisation: 'The Bear Engineering Workspace', detail: 'Designing AI-assisted workflows that help engineering teams reason about systems, automate repeatable work and preserve accountability.' },
+      { period: '2025—Present', role: 'Senior Software Developer / AI Engineering & Software Architecture', organisation: 'Independent Software Engineering & AI Projects', detail: 'Designing AI-assisted workflows that help engineering teams reason about systems, automate repeatable work and preserve accountability.' },
       { period: '2024', role: 'Senior Software Engineer / DevOps', organisation: 'SIRMEC', detail: 'Built data-driven reporting and dashboards that established the operational-data foundation for better decision support and automation.' },
       { period: '2023', role: 'DevOps Engineer / Senior Software Engineer', organisation: 'Vemar', detail: 'Implemented predictive-maintenance logic and real-time device data handling across an integrated automation environment.' },
       { period: '2004—2019', role: 'Senior Software & Game Developer / Full-Stack Engineer', organisation: 'NewLand Games', detail: 'Built data-oriented backend services and multi-platform applications, developing the systems engineering foundation used in current AI work.' },

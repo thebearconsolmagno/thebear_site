@@ -4,22 +4,25 @@ interface Props {
   title: string;
   category: string;
   description: string;
-  href: string;
+  href?: string;
   technologies: string;
   fork?: boolean;
+  featured?: boolean;
+  status?: string;
 }
-const { index, title, category, description, href, technologies, fork = false } = Astro.props;
+const { index, title, category, description, href, technologies, fork = false, featured = false, status = 'Completed project' } = Astro.props;
 ---
-<article class="repository-card">
-  <div class="repository-top"><span>{index}</span><span class:list={[{ fork }, 'repository-kind']}>{fork ? 'Open-source fork' : 'Public repository'}</span></div>
+<article class:list={['repository-card', { featured }]} data-project data-category={category.toLowerCase()} data-search={`${title} ${category} ${description} ${technologies}`.toLowerCase()}>
+  <div class="repository-top"><span>{index}</span><span class:list={[{ fork }, 'repository-kind']}>{fork ? 'Open-source fork' : status}</span></div>
   <p class="repository-category">{category}</p>
   <h3>{title}</h3>
   <p class="repository-description">{description}</p>
-  <div class="repository-bottom"><span>{technologies}</span><a href={href} target="_blank" rel="noopener noreferrer">Open repository ↗</a></div>
+  <div class="repository-bottom"><span>{technologies}</span>{href ? <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} project`}>Explore project ↗</a> : <a href="#contact" aria-label={`Request details about ${title}`}>Request details ↘</a>}</div>
 </article>
 
 <style>
-  .repository-card{min-height:218px;display:flex;flex-direction:column;padding:22px;border:1px solid var(--line);background:var(--panel);transition:border-color .2s,transform .2s}
+  .repository-card{min-height:235px;display:flex;flex-direction:column;padding:22px;border:1px solid var(--line);background:var(--panel);transition:border-color .2s,transform .2s,box-shadow .2s}
+  .repository-card.featured{background:linear-gradient(145deg,#171d1e,#101415);border-color:#46504a}
   .repository-card:hover{border-color:var(--acid);transform:translateY(-3px)}
   .repository-top,.repository-bottom{display:flex;justify-content:space-between;gap:14px;font:500 10px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
   .repository-kind.fork{color:#d6c781}.repository-category{margin:24px 0 8px;font:500 10px var(--mono);letter-spacing:.08em;color:var(--acid);text-transform:uppercase}
